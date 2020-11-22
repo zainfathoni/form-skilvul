@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import App from './App';
 
 test('renders form correctly', () => {
@@ -15,12 +16,12 @@ test('submits the form fields correctly', () => {
   render(<App />)
 
   const namaField = screen.getByLabelText('Nama')
-  fireEvent.change(namaField, { target: { value: 'Zain' } })
+  userEvent.type(namaField, 'Zain')
   
   const nikField = screen.getByLabelText('NIK')
-  fireEvent.change(nikField, { target: { value: '12345' } })
+  userEvent.type(nikField, '12345')
 
   const daftarButton = screen.getByRole('button', { name: 'Daftar' })
-  fireEvent.click(daftarButton)
+  userEvent.click(daftarButton)
 })
 
