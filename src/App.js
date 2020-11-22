@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  function handleSubmit(event) {
+    event.preventDefault()
+    const { nama, nik } = event.target.elements
+    console.log({
+      nama: nama.value,
+      nik: nik.value
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Form Pendaftaran TKI
+      </h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <div>
+            Nama
+          </div>
+          <input name="nama" type="text" />
+        </div>
+        <div>
+          <div>
+            NIK
+          </div>
+          <input name="nik" type="number" />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 }
