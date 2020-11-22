@@ -17,19 +17,15 @@ function App() {
       </h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <div>
-            Nama
-          </div>
-          <input name="nama" type="text" />
+          <label htmlFor="form-nama">Nama</label>
+          <input id="form-nama" name="nama" type="text" />
         </div>
         <div>
-          <div>
-            NIK
-          </div>
-          <input name="nik" type="number" />
+          <label htmlFor="form-nik">NIK</label>
+          <input id="form-nik" name="nik" type="number" />
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">Daftar</button>
         </div>
       </form>
     </div>
